@@ -1,0 +1,321 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+
+    background:#111;
+    color:white;
+
+    font-family:
+        "Yu Gothic UI",
+        sans-serif;
+
+}
+
+h1{
+
+    text-align:center;
+
+    margin-bottom:5px;
+
+}
+
+.version{
+
+    text-align:center;
+
+    color:#999;
+
+    margin-bottom:25px;
+
+}
+
+.card{
+
+    background:#1f1f1f;
+
+    padding:20px;
+
+    border-radius:12px;
+
+    margin-bottom:20px;
+
+}
+
+.card h2{
+
+    margin-bottom:15px;
+
+}
+
+#preview{
+
+    width:100%;
+
+    display:none;
+
+    border-radius:10px;
+
+}
+
+
+.crop-area{
+
+    display:grid;
+
+    grid-template-columns: repeat(5, 1fr);
+
+    grid-template-rows: repeat(5, auto);
+
+    gap:15px;
+
+    text-align:center;
+
+    align-items:center;
+
+}
+
+
+/* 西 */
+
+.facility-0{
+    grid-column:1;
+    grid-row:2;
+}
+
+.facility-1{
+    grid-column:1;
+    grid-row:4;
+}
+
+
+/* 左望楼 */
+
+.facility-4{
+    grid-column:2;
+    grid-row:3;
+}
+
+
+/* 中央5施設 */
+
+.facility-2{ /* 1城 */
+    grid-column:3;
+    grid-row:1;
+}
+
+.facility-3{ /* 2城 */
+    grid-column:3;
+    grid-row:2;
+}
+
+.facility-6{ /* 中央拠点 */
+    grid-column:3;
+    grid-row:3;
+}
+
+.facility-7{ /* 3城 */
+    grid-column:3;
+    grid-row:4;
+}
+
+.facility-8{ /* 4城 */
+    grid-column:3;
+    grid-row:5;
+}
+
+
+/* 右望楼 */
+
+.facility-5{
+    grid-column:4;
+    grid-row:3;
+}
+
+
+/* 東 */
+
+.facility-10{ /* 東療養所 */
+    grid-column:5;
+    grid-row:2;
+}
+
+.facility-9{ /* 東矢倉 */
+    grid-column:5;
+    grid-row:4;
+}
+
+.crop-area canvas{
+
+    width:100%;
+
+    max-width:220px;
+
+}
+#measureCanvas{
+
+    width:100%;
+
+    max-width:1000px;
+
+    min-height:300px;
+
+    border:2px solid #666;
+
+    cursor:crosshair;
+
+}
+
+#measureInfo{
+
+    margin-top:15px;
+
+    background:#222;
+
+    color:#7CFC00;
+
+    padding:10px;
+
+    border-radius:8px;
+
+    font-size:16px;
+
+}
+#analyzeButton {
+    font-size: 24px;
+    padding: 12px 40px;
+    font-weight: bold;
+}
+
+/*測量機能を隠す*/
+
+#measureCanvas,
+#measureInfo {
+    display:none;
+}
+
+#result {
+    font-size: 16px;
+    line-height: 1.35;
+    width: 300px;
+    height: 450px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+}
+/* 判定と軍師報告の2カラム */
+.result-panel {
+    display: flex;
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.result-box {
+    flex: 1;
+    background: #1f1f1f;
+    border: 1px solid #444;
+    border-radius: 8px;
+    padding: 12px;
+}
+
+.result-box h3 {
+    margin: 0 0 8px 0;
+    font-size: 16px;
+}
+
+.result-box pre {
+    margin: 0;
+    white-space: pre-wrap;
+    font-size: 15px;
+    line-height: 1.5;
+}
+body {
+    margin: 0;
+    background: #111;
+    color: white;
+}
+
+
+
+#judgeWindow {
+    position: fixed;
+    left: 10px;
+    top: 120px;
+    width: 180px;
+    z-index: 1000;
+}
+
+#reportWindow {
+    position: fixed;
+    right: 10px;
+    top: 120px;
+    width: 300px;
+    max-height: calc(100vh - 140px);
+    overflow-y: auto;
+    z-index: 1000;
+}
+.report-title{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.report-title h3{
+    margin:0;
+}
+
+#elapsedTime{
+    font-size:14px;
+    color:#7CFC00;
+}
+
+
+.container {
+    width: auto;
+    margin-left: 220px;
+    margin-right: 340px;
+    margin-top: 20px;
+}
+.remain-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.remain-row span {
+    width: 50px;
+}
+
+.remain-row input {
+    width: 90px;
+}
+
+.remain-row canvas {
+    width: 100px;
+    height: auto;
+    border: 1px solid #ccc;
+}
+.score-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.score-row span {
+    width: 80px;
+}
+
+.score-row input {
+    width: 120px;
+}
+
+.score-row canvas {
+    width: 90px;
+    border: 1px solid #555;
+    image-rendering: pixelated;
+}

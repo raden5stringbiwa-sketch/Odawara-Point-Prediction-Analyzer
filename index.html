@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AKB β</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Analyzer for Kyushu Battlefield β</h1>
+
+    <p class="version">
+        Version 0.3.2
+    </p>
+
+   <div class="card">
+
+    <h2>📷 戦況画像</h2>
+
+    <input
+        type="file"
+        id="imageInput"
+        accept="image/*">
+
+<div id="remainInputArea">
+
+    <h3>残ポイント補正</h3>
+
+    <div class="remain-row">
+        <div id="remainPreview_北_1城"></div>
+        <span>北1城</span>
+        <input id="remain_北_1城" type="number" value="0">
+    </div>
+
+    <div class="remain-row">
+        <div id="remainPreview_北_2城"></div>
+        <span>北2城</span>
+        <input id="remain_北_2城" type="number" value="0">
+    </div>
+
+    <div class="remain-row">
+        <div id="remainPreview_南_3城"></div>
+        <span>南3城</span>
+        <input id="remain_南_3城" type="number" value="0">
+    </div>
+
+    <div class="remain-row">
+        <div id="remainPreview_南_4城"></div>
+        <span>南4城</span>
+        <input id="remain_南_4城" type="number" value="0">
+    </div>
+
+</div>
+<div class="card">
+    
+    <h2>📊 スコア画像</h2>
+
+    <input
+        type="file"
+        id="scoreImageInput"
+        accept="image/*">
+ <h3>スコア補正</h3>
+
+<div class="score-row">
+    <div id="scorePreview_blue"></div>
+    <span>青ポイント</span>
+    <input id="inputBlueScore" type="number" value="0">
+</div>
+
+<div class="score-row">
+    <div id="scorePreview_red"></div>
+    <span>赤ポイント</span>
+    <input id="inputRedScore" type="number" value="0">
+</div>
+
+<div class="score-row">
+    <div id="scorePreview_time"></div>
+    <span>残り時間</span>
+    <input id="inputRemainTime" type="text" value="60:00">
+</div>
+
+
+    <button id="analyzeButton">
+
+        解析開始
+
+    </button>
+
+
+    
+    <img
+        id="scorePreview"
+        src=""
+        alt="スコア画像"
+        style="max-width:100%; display:none;">
+<pre id="scoreResult">
+スコア：未取得
+</pre>
+<pre id="timeResult">
+残り時間：未取得
+</pre>
+</div>
+
+    
+<div class="card">
+
+    <img
+        id="preview"
+        src=""
+        alt="画像が表示されます"
+        style="max-width:100%;">
+
+<!--    <h2>🛠 測量モード</h2> */ -->
+
+    <canvas id="measureCanvas"></canvas>
+
+    <pre id="measureInfo">
+まだドラッグしていません
+    </pre>
+
+
+
+</div>
+
+ <div class="card">
+
+    <h2>切り抜き画像</h2>
+
+    <div class="crop-area" id="cropArea">
+        
+    </div>
+ </div>
+
+<!--    <h2>解析結果</h2> -->
+
+
+<div id="judgeWindow">
+
+    <div class="result-box">
+        <h3>判定</h3>
+        <pre id="judgeResult">まだ解析していません</pre>
+    </div>
+
+</div>
+<div id="reportWindow">
+    <div class="result-box">
+
+        <div class="report-title">
+           <span id="elapsedDisplay">00:00</span>
+            <h3>戦況報告</h3>
+        </div>
+
+        <pre id="reportResult">まだ解析していません</pre>
+
+    </div>
+</div>
+
+<!--    <h2>📊 スコア解析結果</h2> 
+<pre id="scoreResult"></pre> -->
+    
+ </div>
+</div>
+
+<script src="https://unpkg.com/tesseract.js@5/dist/tesseract.min.js"></script>
+
+<script src="script.js"></script>
+</body>
+</html>
