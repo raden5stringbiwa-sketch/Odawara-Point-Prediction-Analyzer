@@ -53,135 +53,153 @@ let dragging = false;
 
 const areas = [
   {
-    name: "西_矢倉",
-    type: "矢倉",
-    point: 2,
+    name: "北_拠点",
+    type: "拠点",
+    point: 0,
     unlockTime: 0,
     maxPoint: null,
-    x:478,
-    y:341,
-    width:87,
-    height:48
+    remainingPoint: null,
+    x:0, y:0, width:0, height:0
   },
-    
+
+  {
+    name: "西_拠点1",
+    type: "拠点",
+    point: 0,
+    unlockTime: 0,
+    maxPoint: null,
+    remainingPoint: null,
+    x:0, y:0, width:0, height:0
+  },
+
   {
     name: "西_療養所",
     type: "療養所",
-    point: 2,
+    point: 0,
     unlockTime: 0,
     maxPoint: null,
-    x:465,
-    y:506,
-    width:110,
-    height:48
+    remainingPoint: null,
+    x:0, y:0, width:0, height:0
   },
 
   {
-    name: "北_1城",
-    type: "城",
-    point: 28,
-    unlockTime: 2100,
-    maxPoint: 25200,
-    remainingPoint: 25200,
-    x:700,
-    y:78,
-    width:125,
-    height:63
-  },
-  {
-    name: "北_2城",
-    type: "城",
-    point: 28,
-    unlockTime: 900,
-    maxPoint: 25200,
-    remainingPoint: 25200,  
-    x:700,
-    y:247,
-    width:125,
-    height:63
-  },
-
-  {
-    name: "中央_左望楼",
-    type: "望楼",
-    point: 10,
-    unlockTime: 420,
-    maxPoint: null,
-    x:604,
-    y:425,
-    width:93,
-    height:48
-  },
-  {
-    name: "中央_右望楼",
-    type: "望楼",
-    point: 10,
-    unlockTime: 420,
-    maxPoint: null,
-    x:826,
-    y:425,
-    width:93,
-    height:48
-  },
-  {
-    name: "中央拠点",
-    type: "拠点",
-    point: 36,
-    unlockTime: 1620,
+    name: "西_矢倉",
+    type: "矢倉",
+    point: 0,
+    unlockTime: 0,
     maxPoint: null,
     remainingPoint: null,
-    x:700,
-    y:413,
-    width:128,
-    height:46
+    x:0, y:0, width:0, height:0
   },
+
   {
-    name: "南_3城",
-    type: "城",
-    point: 28,
-    unlockTime: 900,
-    maxPoint: 25200,
-    remainingPoint: 25200,
-    x:700,
-    y:578,
-    width:125,
-    height:63
+    name: "東_拠点1",
+    type: "拠点",
+    point: 0,
+    unlockTime: 0,
+    maxPoint: null,
+    remainingPoint: null,
+    x:0, y:0, width:0, height:0
   },
+
   {
-    name: "南_4城",
+    name: "西_拠点2",
+    type: "拠点",
+    point: 0,
+    unlockTime: 0,
+    maxPoint: null,
+    remainingPoint: null,
+    x:0, y:0, width:0, height:0
+  },
+
+  {
+    name: "西_望楼",
+    type: "望楼",
+    point: 0,
+    unlockTime: 0,
+    maxPoint: null,
+    remainingPoint: null,
+    x:0, y:0, width:0, height:0
+  },
+
+  {
+    name: "小田原城",
     type: "城",
-    point: 28,
-    unlockTime: 2100,
-    maxPoint: 25200,
-    remainingPoint: 25200,
-    x:700,
-    y:748,
-    width:125,
-    height:63
+    point: 0,
+    unlockTime: 0,
+    maxPoint: null,
+    remainingPoint: null,
+    x:0, y:0, width:0, height:0
+  },
+
+  {
+    name: "東_望楼",
+    type: "望楼",
+    point: 0,
+    unlockTime: 0,
+    maxPoint: null,
+    remainingPoint: null,
+    x:0, y:0, width:0, height:0
+  },
+
+  {
+    name: "東_拠点2",
+    type: "拠点",
+    point: 0,
+    unlockTime: 0,
+    maxPoint: null,
+    remainingPoint: null,
+    x:0, y:0, width:0, height:0
+  },
+
+  {
+    name: "西_拠点3",
+    type: "拠点",
+    point: 0,
+    unlockTime: 0,
+    maxPoint: null,
+    remainingPoint: null,
+    x:0, y:0, width:0, height:0
   },
 
   {
     name: "東_矢倉",
     type: "矢倉",
-    point: 2,
+    point: 0,
     unlockTime: 0,
     maxPoint: null,
-    x:955,
-    y:508,
-    width:93,
-    height:49
-      
+    remainingPoint: null,
+    x:0, y:0, width:0, height:0
   },
+
   {
     name: "東_療養所",
     type: "療養所",
-    point: 2,
+    point: 0,
     unlockTime: 0,
     maxPoint: null,
-    x:945,
-    y:338,
-    width:112,
-    height:49
+    remainingPoint: null,
+    x:0, y:0, width:0, height:0
+  },
+
+  {
+    name: "東_拠点3",
+    type: "拠点",
+    point: 0,
+    unlockTime: 0,
+    maxPoint: null,
+    remainingPoint: null,
+    x:0, y:0, width:0, height:0
+  },
+
+  {
+    name: "南_拠点",
+    type: "拠点",
+    point: 0,
+    unlockTime: 0,
+    maxPoint: null,
+    remainingPoint: null,
+    x:0, y:0, width:0, height:0
   }
 ];
 // ★ここから追加
