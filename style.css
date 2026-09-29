@@ -63,90 +63,100 @@ h1{
 }
 
 
+/* =========================
+   OPPA 施設配置
+   5列 × 5行
+   行：1・4・5・4・1
+   列：3・3・3・3・3
+   ========================= */
+
 .crop-area{
-
     display:grid;
-
     grid-template-columns: repeat(5, 1fr);
-
     grid-template-rows: repeat(5, auto);
-
     gap:15px;
-
     text-align:center;
-
     align-items:center;
-
 }
 
-
-/* 西 */
-
+/* 北拠点 */
 .facility-0{
-    grid-column:1;
-    grid-row:2;
-}
-
-.facility-1{
-    grid-column:1;
-    grid-row:4;
-}
-
-
-/* 左望楼 */
-
-.facility-4{
-    grid-column:2;
-    grid-row:3;
-}
-
-
-/* 中央5施設 */
-
-.facility-2{ /* 1城 */
     grid-column:3;
     grid-row:1;
 }
 
-.facility-3{ /* 2城 */
+/* 1行目：西1・療養所・矢倉・東1 */
+.facility-1{
+    grid-column:1;
+    grid-row:2;
+}
+
+.facility-2{
+    grid-column:2;
+    grid-row:2;
+}
+
+.facility-3{
     grid-column:3;
     grid-row:2;
 }
 
-.facility-6{ /* 中央拠点 */
+.facility-4{
+    grid-column:5;
+    grid-row:2;
+}
+
+/* 2行目：西2・望楼・小田原城・望楼・東2 */
+.facility-5{
+    grid-column:1;
+    grid-row:3;
+}
+
+.facility-6{
+    grid-column:2;
+    grid-row:3;
+}
+
+.facility-7{
     grid-column:3;
     grid-row:3;
 }
 
-.facility-7{ /* 3城 */
-    grid-column:3;
-    grid-row:4;
-}
-
-.facility-8{ /* 4城 */
-    grid-column:3;
-    grid-row:5;
-}
-
-
-/* 右望楼 */
-
-.facility-5{
+.facility-8{
     grid-column:4;
     grid-row:3;
 }
 
-
-/* 東 */
-
-.facility-10{ /* 東療養所 */
+.facility-9{
     grid-column:5;
-    grid-row:2;
+    grid-row:3;
 }
 
-.facility-9{ /* 東矢倉 */
+/* 3行目：西3・矢倉・療養所・東3 */
+.facility-10{
+    grid-column:1;
+    grid-row:4;
+}
+
+.facility-11{
+    grid-column:2;
+    grid-row:4;
+}
+
+.facility-12{
+    grid-column:3;
+    grid-row:4;
+}
+
+.facility-13{
     grid-column:5;
     grid-row:4;
+}
+
+/* 南拠点 */
+.facility-14{
+    grid-column:3;
+    grid-row:5;
 }
 
 .crop-area canvas{
