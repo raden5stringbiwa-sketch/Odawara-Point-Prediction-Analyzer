@@ -59,7 +59,7 @@ const areas = [
     unlockTime: 0,
     maxPoint: null,
     remainingPoint: null,
-    x:0, y:0, width:0, height:0
+    x:685, y:76, width:150, height:62
   },
 
   {
@@ -69,7 +69,7 @@ const areas = [
     unlockTime: 0,
     maxPoint: null,
     remainingPoint: null,
-    x:0, y:0, width:0, height:0
+    x:810, y:305, width:88, height:64
   },
 
   {
@@ -79,7 +79,7 @@ const areas = [
     unlockTime: 0,
     maxPoint: null,
     remainingPoint: null,
-    x:0, y:0, width:0, height:0
+   x:610, y:308, width:124, height:62
   },
 
   {
@@ -99,7 +99,7 @@ const areas = [
     unlockTime: 0,
     maxPoint: null,
     remainingPoint: null,
-    x:0, y:0, width:0, height:0
+   x:908, y:259, width:119, height:62
   },
 
   {
@@ -179,7 +179,7 @@ const areas = [
     unlockTime: 0,
     maxPoint: null,
     remainingPoint: null,
-    x:0, y:0, width:0, height:0
+   x:799, y:306, width:119, height:64
   },
 
   {
