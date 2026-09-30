@@ -83,13 +83,13 @@ const areas = [
   },
 
   {
-    name: "西_矢倉",
+    name: "東_矢倉",
     type: "矢倉",
     point: 0,
     unlockTime: 0,
     maxPoint: null,
     remainingPoint: null,
-    x:0, y:0, width:0, height:0
+   x:799, y:306, width:119, height:64
   },
 
   {
@@ -163,7 +163,7 @@ const areas = [
   },
 
   {
-    name: "東_矢倉",
+    name: "西_矢倉",
     type: "矢倉",
     point: 0,
     unlockTime: 0,
