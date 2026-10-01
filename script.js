@@ -169,7 +169,7 @@ const areas = [
     unlockTime: 0,
     maxPoint: null,
     remainingPoint: null,
-    x:612, y:538, width:122, height:67
+    x:607, y:540, width:70, height:82
   },
 
   {
@@ -179,7 +179,7 @@ const areas = [
     unlockTime: 0,
     maxPoint: null,
     remainingPoint: null,
-   x:794, y:536, width:124, height:69
+   x:794, y:579, width:124, height:38
   },
 
   {
@@ -199,7 +199,7 @@ const areas = [
     unlockTime: 0,
     maxPoint: null,
     remainingPoint: null,
-    x:685, y:742, width:150, height:62
+    x:698, y:780, width:127, height:62
   }
 ];
 // ★ここから追加
