@@ -203,9 +203,43 @@ const areas = [
   }
 ];
 // ★ここから追加
-const remainAreas = [];
- 
-const remainInputs = {};
+const remainAreas = [
+    {
+        name:"北_1城",
+        x:694,
+        y:116,
+        width:135,
+        height:22
+    },
+    {
+        name:"北_2城",
+        x:694,
+        y:284,
+        width:135,
+        height:22
+    },
+    {
+        name:"南_3城",
+        x:694,
+        y:621,
+        width:135,
+        height:22
+    },
+    {
+        name:"南_4城",
+        x:694,
+        y:789,
+        width:135,
+        height:22
+    }
+];
+
+const remainInputs = {
+    "北1城": document.getElementById("remain_北_1城"),
+    "北2城": document.getElementById("remain_北_2城"),
+    "南3城": document.getElementById("remain_南_3城"),
+    "南4城": document.getElementById("remain_南_4城")
+};
 
 
 let remainPointResults = [];
@@ -504,9 +538,110 @@ scoreResult.textContent =
 
     
 }
+async function readRemainPoints(){
+
+    const previewBox =
+        document.getElementById("remainPreview");
+
+    previewBox.innerHTML = "";
+
+    for(const area of remainAreas){
+
+        const canvas = document.createElement("canvas");
+        const ctx = canvas.getContext("2d");
+
+        canvas.width = area.width;
+        canvas.height = area.height;
 
 
+        ctx.drawImage(
+            preview,
+            area.x,
+            area.y,
+            area.width,
+            area.height,
+            0,
+            0,
+            area.width,
+            area.height
+        );
 
+
+        const result =
+            await Tesseract.recognize(
+                canvas,
+                "eng",
+                {
+                    tessedit_char_whitelist:"0123456789/",
+                    tessedit_pageseg_mode:"7"
+                }
+            );
+
+
+console.log(
+    area.name,
+    result.data.text
+);
+
+const value =
+    Number(
+        result.data.text.replace(/\D/g,"")
+    ) || 0;
+
+const target =
+    areas.find(
+        a => a.name === area.name
+    );
+
+if(target){
+    target.remainingPoint = value;
+}
+
+const input =
+    document.getElementById(
+        "remain_" + area.name
+    );
+        if(input){
+            input.value = value;
+        }
+    }
+}
+
+function showRemainImages(){
+
+    for(const area of remainAreas){
+
+        const canvas = document.createElement("canvas");
+        const ctx = canvas.getContext("2d");
+
+        canvas.width = area.width;
+        canvas.height = area.height;
+
+        ctx.drawImage(
+            preview,
+            area.x,
+            area.y,
+            area.width,
+            area.height,
+            0,
+            0,
+            area.width,
+            area.height
+        );
+
+        const box =
+            document.getElementById(
+                "remainPreview_" + area.name
+            );
+
+        if(box){
+            box.innerHTML = "";
+            box.appendChild(canvas);
+        }
+
+    }
+
+}
 function timeToSeconds(time){
 
     // 全角コロンを半角に変換
@@ -581,7 +716,20 @@ redScore =
    judgeResult.textContent = "解析中・・・";
    reportResult.textContent = "解析中・・・";
 
+    // 残ポイント入力を反映
+areas.forEach(area => {
 
+    const input =
+        document.getElementById(
+            "remain_" + area.name
+        );
+
+    if(input){
+        area.remainingPoint =
+            Number(input.value);
+    }
+
+});
     
 for (const area of remainAreas) {
 
@@ -690,7 +838,32 @@ for (const area of areas){
         detectOwner(canvas, area);
 
 area.owner = owner;
- 
+if(area.name === "中央拠点"){
+    console.log(area);
+}
+    
+    
+if(area.remainingPoint === 0){
+    area.active = false;
+}
+else{
+    area.active = true;
+}
+
+    const unlocked =
+    elapsedTime >= area.unlockTime;
+
+if(unlocked){
+
+if(owner === "青" && area.active){
+    bluePerSec += area.point;
+}
+
+if(owner === "赤" && area.active){
+    redPerSec += area.point;
+}
+
+}
 
 let mark = "⚪";
 
@@ -719,7 +892,29 @@ const finalSeconds = remainingSeconds - 1;
 let blueAdd = 0;
 let redAdd = 0;
 
+for (const area of areas) {
 
+    if (area.owner === "白") continue;
+
+    let addPoint = area.point * finalSeconds;
+
+    // 上限あり施設（城・中央拠点）
+    if (area.maxPoint !== null && area.remainingPoint !== undefined) {
+
+        addPoint = Math.min(
+            addPoint,
+            area.remainingPoint
+        );
+    }
+
+    if (area.owner === "青") {
+        blueAdd += addPoint;
+    }
+
+    if (area.owner === "赤") {
+        redAdd += addPoint;
+    }
+}
 
 const blueFinal = blueScore + blueAdd;
 const redFinal = redScore + redAdd;
