@@ -203,43 +203,9 @@ const areas = [
   }
 ];
 // ★ここから追加
-const remainAreas = [
-    {
-        name:"北_1城",
-        x:694,
-        y:116,
-        width:135,
-        height:22
-    },
-    {
-        name:"北_2城",
-        x:694,
-        y:284,
-        width:135,
-        height:22
-    },
-    {
-        name:"南_3城",
-        x:694,
-        y:621,
-        width:135,
-        height:22
-    },
-    {
-        name:"南_4城",
-        x:694,
-        y:789,
-        width:135,
-        height:22
-    }
-];
-
-const remainInputs = {
-    "北1城": document.getElementById("remain_北_1城"),
-    "北2城": document.getElementById("remain_北_2城"),
-    "南3城": document.getElementById("remain_南_3城"),
-    "南4城": document.getElementById("remain_南_4城")
-};
+const remainAreas = [];
+ 
+const remainInputs = {};
 
 
 let remainPointResults = [];
@@ -716,20 +682,7 @@ redScore =
    judgeResult.textContent = "解析中・・・";
    reportResult.textContent = "解析中・・・";
 
-    // 残ポイント入力を反映
-areas.forEach(area => {
 
-    const input =
-        document.getElementById(
-            "remain_" + area.name
-        );
-
-    if(input){
-        area.remainingPoint =
-            Number(input.value);
-    }
-
-});
     
 for (const area of remainAreas) {
 
