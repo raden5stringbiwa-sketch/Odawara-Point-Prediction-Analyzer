@@ -234,38 +234,16 @@ body {
     margin-top: 20px;
 }
 .remain-row {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, auto);
-    gap: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
     margin-bottom: 8px;
     align-items: center;
-    text-align: center;
 }
 
-.remain-north {
-    grid-column: 2;
-    grid-row: 1;
-}
-
-.remain-west {
-    grid-column: 1;
-    grid-row: 2;
-}
-
-.remain-center {
-    grid-column: 2;
-    grid-row: 2;
-}
-
-.remain-east {
-    grid-column: 3;
-    grid-row: 2;
-}
-
+.remain-north,
 .remain-south {
-    grid-column: 2;
-    grid-row: 3;
+    text-align: center;
 }
 
 .remain-row span {
