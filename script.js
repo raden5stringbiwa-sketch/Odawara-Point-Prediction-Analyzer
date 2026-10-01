@@ -159,7 +159,7 @@ const areas = [
     unlockTime: 0,
     maxPoint: null,
     remainingPoint: null,
-    x:0, y:0, width:0, height:0
+   x:503, y:561, width:120, height:67
   },
 
   {
@@ -169,7 +169,7 @@ const areas = [
     unlockTime: 0,
     maxPoint: null,
     remainingPoint: null,
-    x:0, y:0, width:0, height:0
+    x:612, y:538, width:122, height:67
   },
 
   {
@@ -179,7 +179,7 @@ const areas = [
     unlockTime: 0,
     maxPoint: null,
     remainingPoint: null,
-   x:799, y:306, width:119, height:64
+   x:794, y:536, width:124, height:69
   },
 
   {
@@ -189,7 +189,7 @@ const areas = [
     unlockTime: 0,
     maxPoint: null,
     remainingPoint: null,
-    x:0, y:0, width:0, height:0
+    x:903, y:564, width:122, height:59
   },
 
   {
@@ -199,7 +199,7 @@ const areas = [
     unlockTime: 0,
     maxPoint: null,
     remainingPoint: null,
-    x:0, y:0, width:0, height:0
+    x:685, y:742, width:150, height:62
   }
 ];
 // ★ここから追加
