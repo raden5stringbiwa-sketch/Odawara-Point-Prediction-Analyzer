@@ -290,14 +290,42 @@ body {
     margin-top: 20px;
 }
 .remain-row {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, auto);
+    gap: 15px;
     margin-bottom: 8px;
+    align-items: center;
+    text-align: center;
+}
+
+.remain-north {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.remain-west {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.remain-center {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.remain-east {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+.remain-south {
+    grid-column: 2;
+    grid-row: 3;
 }
 
 .remain-row span {
-    width: 50px;
+    width: auto;
 }
 
 .remain-row input {
