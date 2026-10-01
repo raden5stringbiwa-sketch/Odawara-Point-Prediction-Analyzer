@@ -72,20 +72,18 @@ h1{
 
 .crop-area{
     display:grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(5, auto);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, auto);
     gap:15px;
     text-align:center;
     align-items:center;
 }
 
-/* 北拠点 */
 .facility-0{
-    grid-column:3;
+    grid-column:2;
     grid-row:1;
 }
 
-/* 1行目：西1・療養所・矢倉・東1 */
 .facility-1{
     grid-column:1;
     grid-row:2;
@@ -97,68 +95,14 @@ h1{
 }
 
 .facility-3{
-    grid-column:4;
+    grid-column:3;
     grid-row:2;
 }
 
 .facility-4{
-    grid-column:5;
-    grid-row:2;
-}
-
-/* 2行目：西2・望楼・小田原城・望楼・東2 */
-.facility-5{
-    grid-column:1;
-    grid-row:3;
-}
-
-.facility-6{
     grid-column:2;
     grid-row:3;
 }
-
-.facility-7{
-    grid-column:3;
-    grid-row:3;
-}
-
-.facility-8{
-    grid-column:4;
-    grid-row:3;
-}
-
-.facility-9{
-    grid-column:5;
-    grid-row:3;
-}
-
-/* 3行目：西3・矢倉・療養所・東3 */
-.facility-10{
-    grid-column:1;
-    grid-row:4;
-}
-
-.facility-11{
-    grid-column:2;
-    grid-row:4;
-}
-
-.facility-12{
-    grid-column:4;
-    grid-row:4;
-}
-
-.facility-13{
-    grid-column:5;
-    grid-row:4;
-}
-
-/* 南拠点 */
-.facility-14{
-    grid-column:3;
-    grid-row:5;
-}
-
 .crop-area canvas{
 
     width:100%;
