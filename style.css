@@ -149,7 +149,7 @@ h1{
 
 #measureCanvas,
 #measureInfo {
-    display:block;
+    display:none;
 }
 
 #result {
