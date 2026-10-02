@@ -25,7 +25,7 @@ const redScoreArea  = { x: 941, y: 30, width: 108, height: 30 };
 const areas = [
     { name: "北",     point: 30, unlockTime: 0,
       x: 685, y: 76, width: 150, height: 62,
-      remain: { x: 699, y: 117, width: 60, height: 21 } },
+      remain: { x: 702, y: 116, width: 128, height: 24 } },
 
     { name: "西望楼", point: 32, unlockTime: 0,
       x: 571, y: 426, width: 83, height: 43,
@@ -40,7 +40,7 @@ const areas = [
 
     { name: "南",     point: 30, unlockTime: 0,
       x: 698, y: 780, width: 150, height: 62,
-      remain: { x: 702, y: 790, width: 61, height: 17 } }
+      remain: { x: 702, y: 791, width: 128, height: 24 } }
 ];
 
 const DEFAULT_REGION = { x: 0.2, y: 0, w: 0.6, h: 1 / 3 };
@@ -192,11 +192,26 @@ function showRemainImages() {
     }
 }
 
+// 「12345/50000」「1/50000」のような表示から、スラッシュより前(現在の残ポイント)を取り出す
+function parseRemain(text) {
+    const t = text.replace(/\s/g, "");
+
+    if (t.includes("/")) {
+        return t.split("/")[0].replace(/\D/g, "");
+    }
+
+    // スラッシュが読めなかった場合:最大値が5桁なので、末尾5桁を除く
+    const digits = t.replace(/\D/g, "");
+    return digits.length > 5 ? digits.slice(0, -5) : "";
+}
+
 async function readRemainPoints() {
     for (const area of remainTargets) {
-        const text = await ocrRect(preview, area.remain, "0123456789");
+        const text = await ocrRect(preview, area.remain, "0123456789/");
+        console.log(area.name, "残ポイントOCR:", text);
+
         const input = document.getElementById("remain_" + area.name);
-        if (input) input.value = text.replace(/\D/g, "");   // 読めなければ空欄
+        if (input) input.value = parseRemain(text);   // 読めなければ空欄
     }
 }
 
