@@ -25,7 +25,7 @@ const redScoreArea  = { x: 941, y: 30, width: 108, height: 30 };
 const areas = [
     { name: "北",     point: 30, unlockTime: 0,
       x: 685, y: 76, width: 150, height: 62,
-      remain: { x: 702, y: 116, width: 128, height: 24 } },
+      remain: { x: 702, y: 116, width: 128, height: 22 } },
 
     { name: "西望楼", point: 32, unlockTime: 0,
       x: 571, y: 426, width: 83, height: 43,
@@ -40,7 +40,7 @@ const areas = [
 
     { name: "南",     point: 30, unlockTime: 0,
       x: 698, y: 780, width: 150, height: 62,
-      remain: { x: 702, y: 791, width: 128, height: 24 } }
+      remain: { x: 702, y: 790, width: 128, height: 22 } }
 ];
 
 const DEFAULT_REGION = { x: 0.2, y: 0, w: 0.6, h: 1 / 3 };
