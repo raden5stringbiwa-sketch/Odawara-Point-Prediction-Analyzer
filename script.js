@@ -11,34 +11,36 @@ const TOTAL_GAME_TIME = 3600;
 const MIN_COLOR_RATIO = 0.03;
 
 // スコア画像の読み取り範囲 ★旧ゲームの値のまま。測量モードで測り直してください
-const timeArea      = { x: 695, y: 92, width: 125, height: 30 };
+const timeArea      = { x: 694, y: 126, width: 124, height: 36 };
 const blueScoreArea = { x: 671, y: 30, width: 108, height: 30 };
 const redScoreArea  = { x: 941, y: 30, width: 108, height: 30 };
 
 // 戦況画像の拠点(5か所)
 // 並び順は style.css の .facility-0〜4 に対応:
-//   0:北(上) / 1:西(左) / 2:中央 / 3:東(右) / 4:南(下)
+//   0:北(上) / 1:西望楼(左) / 2:小田原城(中央) / 3:東望楼(右) / 4:南(下)
 //  point : 占有時に入る毎秒ポイント ★要設定
 //  remain: 残ポイント表示の位置(あるのは北・南だけ)
 //  unlockTime: 解放される経過秒(不要なら 0)
 //  region: 所有者判定に使う範囲(割合 0〜1)。省略すると上1/3の中央60%
 const areas = [
-    { name: "北",   point: 0, unlockTime: 0,
-      x: 0, y: 0, width: 100, height: 50,
-      remain: { x: 0, y: 0, width: 100, height: 20 } },
+    { name: "北",     point: 30, unlockTime: 0,
+      x: 685, y: 76, width: 150, height: 62,
+      remain: { x: 702, y: 116, width: 128, height: 24 } },
 
-    { name: "西",   point: 0, unlockTime: 0,
-      x: 0, y: 0, width: 100, height: 50 },
+    { name: "西望楼", point: 32, unlockTime: 0,
+      x: 571, y: 426, width: 83, height: 43,
+      region: { x: 0.15, y: 0, w: 0.7, h: 0.5 } },
 
-    { name: "中央", point: 0, unlockTime: 0,
-      x: 0, y: 0, width: 100, height: 50 },
+    { name: "小田原城", point: 40, unlockTime: 0,
+      x: 695, y: 406, width: 125, height: 55 },
 
-    { name: "東",   point: 0, unlockTime: 0,
-      x: 0, y: 0, width: 100, height: 50 },
+    { name: "東望楼", point: 32, unlockTime: 0,
+      x: 867, y: 426, width: 83, height: 43,
+      region: { x: 0.15, y: 0, w: 0.7, h: 0.5 } },
 
-    { name: "南",   point: 0, unlockTime: 0,
-      x: 0, y: 0, width: 100, height: 50,
-      remain: { x: 0, y: 0, width: 100, height: 20 } }
+    { name: "南",     point: 30, unlockTime: 0,
+      x: 698, y: 780, width: 150, height: 62,
+      remain: { x: 702, y: 789, width: 128, height: 24 } }
 ];
 
 const DEFAULT_REGION = { x: 0.2, y: 0, w: 0.6, h: 1 / 3 };
